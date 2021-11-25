@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
 import searchIcon from '../../../assets/SearchIcon.png';
+import tracks from '../../../db';
+import SSearchBar from './style';
 
 export default function SearchBar({ needle, setNeedle, results, setResults }) {
   useEffect(() => {

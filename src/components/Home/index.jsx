@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
 import SHome from './style';
 import background from '../../assets/background.jpeg';
+import SearchBar from './Searchbar';
 
 export default function Home({ needle, setNeedle, results, setResults }) {
   return (
