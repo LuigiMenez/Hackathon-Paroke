@@ -3,16 +3,7 @@ import SHome from './style';
 import background from '../../assets/background.jpeg';
 import SearchBar from './Searchbar';
 
-export default function Home({
-  needle,
-  setNeedle,
-  title,
-  setTitle,
-  artist,
-  setArtist,
-  video,
-  setVideo,
-}) {
+export default function Home({ needle, setNeedle, results, setResults }) {
   return (
     <SHome background={background}>
       <div className="logo">
@@ -21,12 +12,8 @@ export default function Home({
       <SearchBar
         needle={needle}
         setNeedle={setNeedle}
-        title={title}
-        setTitle={setTitle}
-        artist={artist}
-        setArtist={setArtist}
-        video={video}
-        setVideo={setVideo}
+        results={results}
+        setResults={setResults}
       />
     </SHome>
   );
@@ -35,20 +22,12 @@ export default function Home({
 Home.propTypes = {
   needle: PropTypes.string,
   setNeedle: PropTypes.func,
-  title: PropTypes.string,
-  setTitle: PropTypes.func,
-  artist: PropTypes.string,
-  setArtist: PropTypes.func,
-  video: PropTypes.string,
-  setVideo: PropTypes.func,
+  results: PropTypes.arrayOf(PropTypes.string),
+  setResults: PropTypes.func,
 };
 Home.defaultProps = {
   needle: '',
   setNeedle: () => {},
-  title: '',
-  setTitle: () => {},
-  artist: '',
-  setArtist: () => {},
-  video: '',
-  setVideo: () => {},
+  results: [],
+  setResults: () => {},
 };
