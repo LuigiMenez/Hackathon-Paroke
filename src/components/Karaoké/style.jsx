@@ -23,11 +23,14 @@ export const Title = styled.h1`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-size: 40px;
+  padding-bottom: 45px;
 `;
 
 export const Video = styled.div`
-  height: 70vh;
-  width: 100vw;
+  /*height: 70vh;
+  /* width: 100vw; */
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,15 +38,15 @@ export const Video = styled.div`
 
 export const Lyrics = styled.div`
   color: white;
-  height: 60vh;
+  height: 70vh;
   width: 30vw;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 18px;
+  justify-content: center;
+  font-size: 16px;
   padding-right: 30px;
   padding-left: 30px;
   margin-top: 5vh;

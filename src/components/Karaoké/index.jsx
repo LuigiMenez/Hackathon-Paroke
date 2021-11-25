@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Container, Header, Title, Lyrics } from './style';
 import backgroundVideo from '../../assets/backgroundVideo.jpeg';
-
-// const data = {
-//   title: 'moi',
-//   artiste: 'moi',
-// };
+// import db from '../../db';
 
 export default function Karaoké() {
   // const [videos, setVideos] = useState([]);
@@ -25,7 +22,7 @@ export default function Karaoké() {
   return (
     <Container>
       <Header backgroundVideo={backgroundVideo}>
-        <Title>{/* {data.title} - {data.artiste} */}Beyonce - Halo</Title>
+        <Title>qedq</Title>
       </Header>
       {/* <>
         {lyrics.map((e) => {
@@ -36,6 +33,11 @@ export default function Karaoké() {
           );
         })}
       </> */}
+      <ReactPlayer
+        url="https://www.youtube.com/watch?v=XWCwc1_sYMY"
+        width="100vw"
+        height="33.5vw"
+      />
       <Lyrics>{lyrics}</Lyrics>
     </Container>
   );
