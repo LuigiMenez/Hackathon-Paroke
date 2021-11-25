@@ -5,14 +5,20 @@ import searchIcon from '../../../assets/SearchIcon.png';
 import tracks from '../../../db';
 import SSearchBar from './style';
 
-export default function SearchBar({ needle, setNeedle, results, setResults }) {
+export default function SearchBar({
+  needle,
+  setNeedle,
+  results,
+  setResults,
+  setTrack,
+}) {
   useEffect(() => {
     if (needle.length) {
       setResults(
         tracks.filter(
-          (track) =>
-            track.title.toUpperCase().includes(needle.toUpperCase()) ||
-            track.artist.toUpperCase().includes(needle.toUpperCase())
+          (t) =>
+            t.title.toUpperCase().includes(needle.toUpperCase()) ||
+            t.artist.toUpperCase().includes(needle.toUpperCase())
         )
       );
       console.log(needle);
@@ -45,7 +51,12 @@ export default function SearchBar({ needle, setNeedle, results, setResults }) {
         <ul>
           {results.map((result) => {
             return (
-              <Link to="/karaoke">
+              <Link
+                to={`/karaoke/${result.title}`}
+                onClick={() => {
+                  setTrack(result);
+                }}
+              >
                 <li>{result.title}</li>
               </Link>
             );
@@ -61,10 +72,12 @@ SearchBar.propTypes = {
   setNeedle: PropTypes.func,
   results: PropTypes.arrayOf(PropTypes.string),
   setResults: PropTypes.func,
+  setTrack: PropTypes.func,
 };
 SearchBar.defaultProps = {
   needle: '',
   setNeedle: () => {},
   results: [],
   setResults: () => {},
+  setTrack: () => {},
 };

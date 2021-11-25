@@ -8,6 +8,7 @@ import Home from './components/Home';
 export default function App() {
   const [needle, setNeedle] = useState('');
   const [results, setResults] = useState([]);
+  const [track, setTrack] = useState([]);
 
   return (
     <>
@@ -22,10 +23,12 @@ export default function App() {
               setNeedle={setNeedle}
               results={results}
               setResults={setResults}
+              track={track}
+              setTrack={setTrack}
             />
           }
         />
-        <Route path="/karaoke" element={<Karaoké results={results} />} />
+        <Route path="/karaoke/:title" element={<Karaoké track={track} />} />
       </Routes>
     </>
   );
