@@ -1,50 +1,72 @@
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import tracks from '../../../db';
 import SSearchBar from './style';
 import searchIcon from '../../../assets/SearchIcon.png';
 
 export default function SearchBar({
-  searchBarInputUser,
-  setSearchBarInputUser,
-  setStatsSearchBar,
-  searchCount,
-  setSearchCount,
+  needle,
+  setNeedle,
+  title,
+  setTitle,
+  artist,
+  setArtist,
+  video,
+  setVideo,
 }) {
+  useEffect(() => {
+    const result = tracks.filter((track) =>
+      track.title.toUpperCase().includes(needle.toUpperCase())
+    );
+    setTitle(result[0].title);
+    setVideo(result.video);
+    setArtist(result.artist);
+    console.log(title);
+  }, [needle]);
+
+  console.log(title);
+  console.log(artist);
+  console.log(video);
   return (
     <SSearchBar
-      className="searchBar"
       onSubmit={(e) => {
         e.preventDefault();
-        setStatsSearchBar(true);
-        setSearchCount(searchCount + 1);
       }}
     >
       <input
         type="search"
         id="mySearch"
         name="title"
-        value={searchBarInputUser}
+        value={needle}
         onChange={(e) => {
-          return setSearchBarInputUser(e.target.value);
+          return setNeedle(e.target.value);
         }}
       />
       <button type="submit">
         <img src={searchIcon} alt="Search icon" />
       </button>
+      <ul>coucou</ul>
     </SSearchBar>
   );
 }
 
 SearchBar.propTypes = {
-  searchBarInputUser: PropTypes.string,
-  setSearchBarInputUser: PropTypes.func,
-  setStatsSearchBar: PropTypes.func,
-  searchCount: PropTypes.number,
-  setSearchCount: PropTypes.func,
+  needle: PropTypes.string,
+  setNeedle: PropTypes.func,
+  title: PropTypes.string,
+  setTitle: PropTypes.func,
+  artist: PropTypes.string,
+  setArtist: PropTypes.func,
+  video: PropTypes.string,
+  setVideo: PropTypes.func,
 };
 SearchBar.defaultProps = {
-  searchBarInputUser: '',
-  setSearchBarInputUser: () => {},
-  setStatsSearchBar: () => {},
-  searchCount: 0,
-  setSearchCount: () => {},
+  needle: '',
+  setNeedle: () => {},
+  title: '',
+  setTitle: () => {},
+  artist: '',
+  setArtist: () => {},
+  video: '',
+  setVideo: () => {},
 };

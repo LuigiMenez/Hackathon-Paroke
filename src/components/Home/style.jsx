@@ -14,7 +14,8 @@ const SHome = styled.main`
 
   .logo {
     margin-top: 25vh;
-    background-color: black;
+    background-color: #000000;
+
     width: 35vw;
     height: 150px;
     display: flex;

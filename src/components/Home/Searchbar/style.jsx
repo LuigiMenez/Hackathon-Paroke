@@ -15,6 +15,7 @@ const SSearchBar = styled.form`
     border: none;
     height: 100%;
     width: 50vw;
+    padding-left: 5vw;
   }
 
   input:focus {
