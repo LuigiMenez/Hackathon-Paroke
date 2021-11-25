@@ -1,54 +1,69 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import searchIcon from '../../../assets/SearchIcon.png';
 
-export default function SearchBar({
-  searchBarInputUser,
-  setSearchBarInputUser,
-  setStatsSearchBar,
-  searchCount,
-  setSearchCount,
-}) {
-  const location = useLocation();
-  if (location.pathname === '/') {
-    return (
+export default function SearchBar({ needle, setNeedle, results, setResults }) {
+  useEffect(() => {
+    if (needle.length) {
+      setResults(
+        tracks.filter(
+          (track) =>
+            track.title.toUpperCase().includes(needle.toUpperCase()) ||
+            track.artist.toUpperCase().includes(needle.toUpperCase())
+        )
+      );
+      console.log(needle);
+    } else {
+      setResults([]);
+    }
+  }, [needle]);
+
+  return (
+    <SSearchBar>
       <form
-        className="searchBar"
         onSubmit={(e) => {
           e.preventDefault();
-          setStatsSearchBar(true);
-          setSearchCount(searchCount + 1);
         }}
       >
         <input
           type="search"
           id="mySearch"
-          name="nameOfCocktail"
-          value={searchBarInputUser}
+          name="title"
+          value={needle}
           onChange={(e) => {
-            return setSearchBarInputUser(e.target.value);
+            return setNeedle(e.target.value);
           }}
         />
         <button type="submit">
           <img src={searchIcon} alt="Search icon" />
         </button>
       </form>
-    );
-  }
-  return null;
+      {needle.length ? (
+        <ul>
+          {results.map((result) => {
+            return (
+              <Link to="/karaoke">
+                <li>{result.title}</li>
+              </Link>
+            );
+          })}
+        </ul>
+      ) : null}
+    </SSearchBar>
+  );
 }
 
 SearchBar.propTypes = {
-  searchBarInputUser: PropTypes.string,
-  setSearchBarInputUser: PropTypes.func,
-  setStatsSearchBar: PropTypes.func,
-  searchCount: PropTypes.number,
-  setSearchCount: PropTypes.func,
+  needle: PropTypes.string,
+  setNeedle: PropTypes.func,
+  results: PropTypes.arrayOf(PropTypes.string),
+  setResults: PropTypes.func,
 };
 SearchBar.defaultProps = {
-  searchBarInputUser: '',
-  setSearchBarInputUser: () => {},
-  setStatsSearchBar: () => {},
-  searchCount: 0,
-  setSearchCount: () => {},
+  needle: '',
+  setNeedle: () => {},
+  results: [],
+  setResults: () => {},
 };
