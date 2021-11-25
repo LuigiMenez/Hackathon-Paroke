@@ -45,7 +45,7 @@ export default function SearchBar({ needle, setNeedle, results, setResults }) {
         <ul>
           {results.map((result) => {
             return (
-              <Link to="/karaoke">
+              <Link to="/karaoké">
                 <li>{result.title}</li>
               </Link>
             );
