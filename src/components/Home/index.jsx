@@ -1,5 +1,6 @@
 import SHome from './style';
 import background from '../../assets/background.jpeg';
+import SearchBar from './Searchbar';
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <div className="logo">
         <h1>Paroké</h1>
       </div>
+      <SearchBar />
     </SHome>
   );
 }

@@ -2,7 +2,7 @@ import { Reset } from 'styled-reset';
 import GlobalStyle from 'GlobalStyle';
 import Home from './components/Home';
 
-function App() {
+export default function App() {
   return (
     <>
       <Reset />
@@ -11,5 +11,3 @@ function App() {
     </>
   );
 }
-
-export default App;

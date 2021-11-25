@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
+import SSearchBar from './style';
 import searchIcon from '../../../assets/SearchIcon.png';
 
 export default function SearchBar({
@@ -9,33 +9,29 @@ export default function SearchBar({
   searchCount,
   setSearchCount,
 }) {
-  const location = useLocation();
-  if (location.pathname === '/') {
-    return (
-      <form
-        className="searchBar"
-        onSubmit={(e) => {
-          e.preventDefault();
-          setStatsSearchBar(true);
-          setSearchCount(searchCount + 1);
+  return (
+    <SSearchBar
+      className="searchBar"
+      onSubmit={(e) => {
+        e.preventDefault();
+        setStatsSearchBar(true);
+        setSearchCount(searchCount + 1);
+      }}
+    >
+      <input
+        type="search"
+        id="mySearch"
+        name="title"
+        value={searchBarInputUser}
+        onChange={(e) => {
+          return setSearchBarInputUser(e.target.value);
         }}
-      >
-        <input
-          type="search"
-          id="mySearch"
-          name="nameOfCocktail"
-          value={searchBarInputUser}
-          onChange={(e) => {
-            return setSearchBarInputUser(e.target.value);
-          }}
-        />
-        <button type="submit">
-          <img src={searchIcon} alt="Search icon" />
-        </button>
-      </form>
-    );
-  }
-  return null;
+      />
+      <button type="submit">
+        <img src={searchIcon} alt="Search icon" />
+      </button>
+    </SSearchBar>
+  );
 }
 
 SearchBar.propTypes = {

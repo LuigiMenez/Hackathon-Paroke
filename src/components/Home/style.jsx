@@ -7,15 +7,21 @@ const SHome = styled.main`
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   .logo {
+    margin-top: 25vh;
     background-color: black;
-    width: 300px;
+    width: 35vw;
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    margin: auto 0;
+
     h1 {
       color: yellow;
     }
