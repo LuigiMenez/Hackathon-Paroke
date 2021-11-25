@@ -11,18 +11,15 @@ const SHome = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   .logo {
     margin-top: 25vh;
     background-color: #000000;
-
     width: 35vw;
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-
     h1 {
       color: yellow;
     }

@@ -11,7 +11,6 @@ const SSearchBar = styled.div`
     overflow: hidden;
     width: fit-content;
     margin-top: 20vh;
-
     input {
       border: none;
       height: 100%;
@@ -19,11 +18,9 @@ const SSearchBar = styled.div`
       padding-left: 5vw;
       font-size: 1.3rem;
     }
-
     input:focus {
       outline: none;
     }
-
     button {
       height: 100%;
       border: none;
@@ -44,10 +41,8 @@ const SSearchBar = styled.div`
     margin-top: 10px;
     text-align: left;
     padding: 10px;
-
     a {
       text-decoration: none;
-
       li {
         color: black;
         padding-bottom: 5px;
@@ -58,5 +53,4 @@ const SSearchBar = styled.div`
     }
   }
 `;
-
 export default SSearchBar;
