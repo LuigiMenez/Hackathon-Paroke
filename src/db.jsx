@@ -9,6 +9,61 @@ const tracks = [
     artist: 'Beyonce',
     video: 'https://www.youtube.com/watch?v=XWCwc1_sYMY',
   },
+  {
+    title: '1 + 1',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/KaasJ44O5lI',
+  },
+  {
+    title: 'I care',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/1d877LbM_lk',
+  },
+  {
+    title: 'I miss You',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/WDuDAF7gYV0',
+  },
+  {
+    title: 'Best Thing I Never had',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/FHp2KgyQUFk',
+  },
+  {
+    title: 'If I were a Boy',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/CRR3L5-o3mQ',
+  },
+  {
+    title: 'Disappear',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/-KefL9I5pTY',
+  },
+  {
+    title: 'Broken-Hearted Girl',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/JXmUYdOVJtc',
+  },
+  {
+    title: 'Crazy in love',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/ViwtNLUqkMY',
+  },
+  {
+    title: 'Naughty Girl',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/RZuJ_OHBN78',
+  },
+  {
+    title: 'Baby Boy',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/8ucz_pm3LX8',
+  },
+  {
+    title: 'Hip hop star',
+    artist: 'Beyonce',
+    video: 'https://youtu.be/TAGVTVzzpC4',
+  },
 ];
 
 export const artists = [
