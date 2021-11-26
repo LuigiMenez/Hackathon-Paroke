@@ -37,16 +37,16 @@ export const Albums = styled.div`
   text-align: center;
   justify-content: space-around;
   font-size: 16px;
-  padding: 10vh 10vw;
+  padding: 5vh 5vw;
 
   .album {
     display: flex;
-    width: 500px;
+    width: 300px;
     margin-right: 30px;
     margin-bottom: 60px;
     .cover {
       img {
-        width: 300px;
+        width: 100px;
         margin-right: 30px;
       }
     }
@@ -59,6 +59,20 @@ export const Albums = styled.div`
           color: grey;
           cursor: pointer;
         }
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 10vh 10vw;
+    .album {
+      width: 500px;
+      .cover {
+        img {
+          width: 300px;
+        }
+      }
+      ul {
+        width: 300px;
       }
     }
   }
