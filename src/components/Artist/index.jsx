@@ -29,11 +29,16 @@ export default function Artist() {
       <Albums>
         {albums.map((a) => {
           return (
-            <div>
-              <div>
+            <div className="album">
+              <div className="cover">
                 <img src={a.image} alt="" />
                 <p>{a.album}</p>
               </div>
+              <ul>
+                {a.titles.map((title) => {
+                  return <li>{title}</li>;
+                })}
+              </ul>
             </div>
           );
         })}
