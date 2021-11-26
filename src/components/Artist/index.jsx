@@ -1,25 +1,21 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useEffect } from 'react/cjs/react.development';
-import { artists } from '../../db';
+import tracks, { artists } from '../../db';
 import { Container, Header, Title, Albums } from './style';
 import backgroundHeader from '../../assets/backgroundVideo.jpeg';
 
-export default function Artist() {
+export default function Artist({ setTrack }) {
   const [albums, setAlbums] = useState([]);
   const { artist } = useParams();
   useEffect(() => {
     const currentArtist = artists.find(
       (a) => a.name.toUpperCase() === artist.toUpperCase()
     );
-    setAlbums(currentArtist.infos);
-    // setAlbums(
-    //   artists.filter((a) => a.name.toUpperCase() === artist.toUpperCase())
-    // );
-    console.log(albums);
-  });
 
-  console.log(albums);
+    setAlbums(currentArtist.infos);
+  });
 
   return (
     <Container>
@@ -36,7 +32,20 @@ export default function Artist() {
               </div>
               <ul>
                 {a.titles.map((title) => {
-                  return <li>{title}</li>;
+                  return (
+                    <Link
+                      to={`/karaoke/${title}`}
+                      onClick={() => {
+                        setTrack(
+                          tracks.find(
+                            (t) => t.title.toUpperCase() === title.toUpperCase()
+                          )
+                        );
+                      }}
+                    >
+                      <li>{title}</li>
+                    </Link>
+                  );
                 })}
               </ul>
             </div>
@@ -46,3 +55,11 @@ export default function Artist() {
     </Container>
   );
 }
+Artist.propTypes = {
+  // track: PropTypes.arrayOf(PropTypes.string),
+  setTrack: PropTypes.func,
+};
+Artist.defaultProps = {
+  // // track: [],
+  setTrack: () => {},
+};
