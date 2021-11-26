@@ -53,6 +53,7 @@ export default function SearchBar({
           type="search"
           id="mySearch"
           name="title"
+          placeholder="Type your song or artist name ..."
           value={needle}
           onChange={(e) => {
             return setNeedle(e.target.value);
