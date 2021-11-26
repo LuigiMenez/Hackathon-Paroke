@@ -29,17 +29,51 @@ export const Title = styled.h1`
 
 export const Albums = styled.div`
   color: white;
-  height: 70vh;
-  width: 30vw;
+  width: 100vw;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 16px;
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  padding: 5vh 5vw;
+
+  .album {
+    display: flex;
+    width: 300px;
+    margin-right: 30px;
+    margin-bottom: 60px;
+    .cover {
+      img {
+        width: 100px;
+        margin-right: 30px;
+      }
+    }
+    ul {
+      width: 300px;
+      li {
+        padding-bottom: 10px;
+        text-align: left;
+        :hover {
+          color: grey;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    padding: 10vh 10vw;
+    .album {
+      width: 500px;
+      .cover {
+        img {
+          width: 300px;
+        }
+      }
+      ul {
+        width: 300px;
+      }
+    }
+  }
 `;

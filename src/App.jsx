@@ -30,7 +30,10 @@ export default function App() {
           }
         />
         <Route path="/karaoke/:title" element={<Karaoké track={track} />} />
-        <Route path="/artist/:artist" element={<Artist track={track} />} />
+        <Route
+          path="/artist/:artist"
+          element={<Artist track={track} setTrack={setTrack} />}
+        />
       </Routes>
     </>
   );

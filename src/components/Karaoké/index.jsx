@@ -33,7 +33,12 @@ export default function Karaoké({ track }) {
       </Header>
       <View>
         <Video>
-          <ReactPlayer url={track.video} width="48vw" height="33vw" />
+          <ReactPlayer
+            id="reactPlayer"
+            url={track.video}
+            width="48vw"
+            height="33vw"
+          />
         </Video>
         <Lyrics>{lyrics}</Lyrics>
       </View>

@@ -52,5 +52,11 @@ const SHome = styled.main`
       height: 150px;
     }
   }
+  @media only screen and (min-width: 600px) {
+    .logo {
+      width: 35vw;
+      height: 150px;
+    }
+  }
 `;
 export default SHome;
