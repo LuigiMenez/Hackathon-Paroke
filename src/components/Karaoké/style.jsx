@@ -11,9 +11,8 @@ export const Header = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   height: 30vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 0fr 1.1fr;
   align-items: center;
 `;
 
@@ -25,6 +24,7 @@ export const Title = styled.h1`
   align-items: center;
   font-size: 40px;
   padding-bottom: 95px;
+  padding-right: 122px;
   font-family: 'Comfortaa', cursive;
 `;
 

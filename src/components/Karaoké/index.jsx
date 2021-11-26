@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import { Container, Header, Title, Lyrics, View, Video } from './style';
 import backgroundVideo from '../../assets/backgroundVideo.jpeg';
+import Btn from '../Btn/Btn';
 
 export default function Karaoké({ track }) {
   // const [videos, setVideos] = useState([]);
@@ -25,10 +26,10 @@ export default function Karaoké({ track }) {
   return (
     <Container>
       <Header backgroundVideo={backgroundVideo}>
+        <Btn />
         <Title>
           {track.artist} - {track.title}
         </Title>
-        <img src="../../assets/retour.png" alt="retour" />
       </Header>
       <View>
         <Video>

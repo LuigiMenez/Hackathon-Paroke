@@ -12,8 +12,8 @@ export const Header = styled.div`
   background-repeat: no-repeat;
   height: 30vh;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 0fr 1.1fr;
   align-items: center;
 `;
 
