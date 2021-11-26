@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import searchIcon from '../../../assets/SearchIcon.png';
@@ -12,6 +12,18 @@ export default function SearchBar({
   setResults,
   setTrack,
 }) {
+  const [artists, setArtists] = useState([]);
+
+  function removeDuplicates(array) {
+    const unique = {};
+    array.forEach((i) => {
+      if (!unique[i]) {
+        unique[i] = true;
+      }
+    });
+    return Object.keys(unique);
+  }
+
   useEffect(() => {
     if (needle.length) {
       setResults(
@@ -21,7 +33,10 @@ export default function SearchBar({
             t.artist.toUpperCase().includes(needle.toUpperCase())
         )
       );
-      console.log(needle);
+      results.forEach((result) => {
+        setArtists(artists.push(result.artist));
+      });
+      setArtists(removeDuplicates(artists));
     } else {
       setResults([]);
     }
@@ -48,20 +63,33 @@ export default function SearchBar({
         </button>
       </form>
       {needle.length ? (
-        <ul>
-          {results.map((result) => {
-            return (
-              <Link
-                to={`/karaoke/${result.title}`}
-                onClick={() => {
-                  setTrack(result);
-                }}
-              >
-                <li>{result.title}</li>
-              </Link>
-            );
-          })}
-        </ul>
+        <div>
+          <ul className="titles">
+            <p>Titles</p>
+            {results.map((result) => {
+              return (
+                <Link
+                  to={`/karaoke/${result.title}`}
+                  onClick={() => {
+                    setTrack(result);
+                  }}
+                >
+                  <li>{result.title}</li>
+                </Link>
+              );
+            })}
+          </ul>
+          <ul className="artists">
+            <p>Artists</p>
+            {artists.map((a) => {
+              return (
+                <Link to={`/artist/${a}`}>
+                  <li>{a}</li>
+                </Link>
+              );
+            })}
+          </ul>
+        </div>
       ) : null}
     </SSearchBar>
   );

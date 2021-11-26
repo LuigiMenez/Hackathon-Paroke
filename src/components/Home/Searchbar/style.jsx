@@ -33,21 +33,32 @@ const SSearchBar = styled.div`
       }
     }
   }
-  ul {
-    width: 50vw;
-    height: auto;
-    background: white;
-    position: absolute;
-    margin-top: 10px;
-    text-align: left;
-    padding: 10px;
-    a {
-      text-decoration: none;
-      li {
-        color: black;
-        padding-bottom: 5px;
-        :hover {
-          background: #eeeded;
+  div {
+    display: flex;
+    .artists {
+      left: 50vw;
+    }
+    ul {
+      width: 25vw;
+      height: auto;
+      background: white;
+      position: absolute;
+      margin-top: 10px;
+      text-align: left;
+      padding: 10px;
+
+      p {
+        padding-bottom: 1rem;
+        font-weight: bold;
+      }
+      a {
+        text-decoration: none;
+        li {
+          color: black;
+          padding-bottom: 5px;
+          :hover {
+            background: #eeeded;
+          }
         }
       }
     }

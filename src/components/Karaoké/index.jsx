@@ -37,11 +37,7 @@ export default function Karaoké({ track }) {
           );
         })}
       </> */}
-      <ReactPlayer
-        url="https://www.youtube.com/watch?v=XWCwc1_sYMY"
-        width="100vw"
-        height="33.5vw"
-      />
+      <ReactPlayer url={track.video} width="100vw" height="33.5vw" />
       <Lyrics>{lyrics}</Lyrics>
     </Container>
   );

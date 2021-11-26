@@ -4,6 +4,7 @@ import { Reset } from 'styled-reset';
 import GlobalStyle from 'GlobalStyle';
 import Karaoké from './components/Karaoké';
 import Home from './components/Home';
+import Artist from './components/Artist';
 
 export default function App() {
   const [needle, setNeedle] = useState('');
@@ -29,6 +30,7 @@ export default function App() {
           }
         />
         <Route path="/karaoke/:title" element={<Karaoké track={track} />} />
+        <Route path="/artist/:artist" element={<Artist track={track} />} />
       </Routes>
     </>
   );
