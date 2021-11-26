@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 99.4vw;
 `;
 
 export const Header = styled.div`
@@ -24,31 +24,32 @@ export const Title = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  padding-bottom: 45px;
+  padding-bottom: 95px;
+  font-family: 'Comfortaa', cursive;
 `;
 
-export const Video = styled.div`
-  /*height: 70vh;
-  /* width: 100vw; */
-  margin: auto;
+export const View = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
 `;
 
 export const Lyrics = styled.div`
   color: white;
-  height: 70vh;
-  width: 30vw;
+  height: 65vh;
+  max-width: 50vw;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  font-size: 16px;
+  font-family: 'Comfortaa', cursive;
   text-align: center;
   justify-content: center;
-  font-size: 16px;
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  padding-left: 130px;
+  padding-top: 23px;
+`;
+
+export const Video = styled.div`
+  padding-top: 15px;
+  padding-left: 35px;
 `;

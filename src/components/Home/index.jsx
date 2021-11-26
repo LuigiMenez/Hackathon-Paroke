@@ -13,8 +13,10 @@ export default function Home({
 }) {
   return (
     <SHome background={background}>
-      <div className="logo">
-        <h1>Paroké</h1>
+      <div className="logoBorder">
+        <div className="logo">
+          <h1>Paroké</h1>
+        </div>
       </div>
       <SearchBar
         needle={needle}
