@@ -6,6 +6,14 @@ export const Button = styled.button`
   background: none;
   border: none;
   padding-left: 60px;
+  @media only screen and (max-width: 600px) {
+    padding-left: 5px;
+    padding-bottom: 100px;
+    margin-bottom: 70px;
+    margin-right: 40px;
+    height: 75px;
+    width: 75px;
+  }
 `;
 
 export const Img = styled.img`
@@ -39,6 +47,10 @@ export const Img = styled.img`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    height: 75px;
+    width: 75px;
+  }
 `;
 
 export const Tooltip = styled.div`
@@ -70,5 +82,8 @@ export const Tooltip = styled.div`
     border-top: 3px solid transparent;
     border-right: 29px solid #ffc700;
     border-bottom: 9px solid transparent;
+  }
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
 `;
