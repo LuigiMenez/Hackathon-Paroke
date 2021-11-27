@@ -5,6 +5,7 @@ import { useEffect } from 'react/cjs/react.development';
 import tracks, { artists } from '../../db';
 import { Container, Header, Title, Albums } from './style';
 import backgroundHeader from '../../assets/backgroundVideo.jpeg';
+import Btn from '../Btn/Btn';
 
 export default function Artist({ setTrack }) {
   const [albums, setAlbums] = useState([]);
@@ -20,6 +21,7 @@ export default function Artist({ setTrack }) {
   return (
     <Container>
       <Header backgroundHeader={backgroundHeader}>
+        <Btn>d</Btn>
         <Title>{artist}</Title>
       </Header>
       <Albums>

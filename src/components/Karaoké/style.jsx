@@ -25,6 +25,7 @@ export const Title = styled.h1`
   align-items: center;
   font-size: 40px;
   padding-bottom: 95px;
+  padding-right: 122px;
   font-family: 'Comfortaa', cursive;
 `;
 
